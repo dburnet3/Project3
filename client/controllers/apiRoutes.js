@@ -1,13 +1,28 @@
 const router = require("express").Router();
 const db = require("../models");
 
+
 //retrieve all
 router.get("/api/provision", async (req, res) => res.json((await db.provision.findAll({}))));
 
 router.post("/api/provision", (req, res) => res.json({}));
 
 //1. Account (CRUD)
-//2. Activity (CRUD)
+
+//2. Activity (U)
+//---get route for updating activity information---//
+router.put("api/activities", function (req, res) {
+    db.Activity.update(req.body,
+        {
+            where: {
+                id: req.body.id
+            }
+        })
+        .then(function (dbActivity) {
+            res.json(dbActivity);
+        });
+});
+
 //3. Discussion Post (CRUD)
 //---get route for getting all discussion posts---//
 router.get("/api/posts/", function (req, res) {
