@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const db = require("../models");
+const passport = require("../config/passport");
 
 
 //retrieve all
@@ -7,7 +8,33 @@ router.get("/api/provision", async (req, res) => res.json((await db.provision.fi
 
 router.post("/api/provision", (req, res) => res.json({}));
 
-//1. Account (CRUD)
+//1. Account (CR) -- This is for the primary caretaker.  The PC will be able to send out random codes to SC's via the account management page.
+//---post route for signing up the user---//
+router.post("/api/signup", function (req, res) {
+    console.log(req.body);
+    db.User.create({
+        email: req.body.email,
+        password: req.body.password
+    }).then(function () {
+        res.redirect(301, "/api/login");
+    }).catch(function (err) {
+        console.log(err);
+        res.json(err);
+    });
+});
+
+//---post route to send user to authenticate user and send to the accountSetup page
+router.post("api/login", passport.authenticate("local"), function (req, res) {
+
+    res.json("/accountSetup")
+});
+
+//---get route to log user out of their account---//
+router.get("/logout", function (req, res) {
+    req.logout();
+    res.redirect("/");
+});
+
 
 //2. Activity (U)
 //---get route for updating activity information---//
@@ -70,6 +97,5 @@ router.put("api/posts", function (req, res) {
         });
 });
 
-//4. Login / Logout
 
 module.exports = router;
