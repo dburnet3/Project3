@@ -1,5 +1,14 @@
 module.exports = function (sequelize, DataTypes) {
     var User = sequelize.define("User", {
+
+        primaryUser: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        secondaryUser: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
         firstName: {
             type: DataTypes.STRING,
             allowNull: false
