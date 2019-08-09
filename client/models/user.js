@@ -1,19 +1,15 @@
 module.exports = function (sequelize, DataTypes) {
     var User = sequelize.define("User", {
 
-        primaryUser: {
+        user_type: {
             type: DataTypes.STRING,
             allowNull: true
         },
-        secondaryUser: {
-            type: DataTypes.STRING,
-            allowNull: true
-        },
-        firstName: {
+        user_name: {
             type: DataTypes.STRING,
             allowNull: false
         },
-        email: {
+        user_email: {
             type: DataTypes.STRING,
             allowNull: false,
             unique: true,
@@ -21,7 +17,7 @@ module.exports = function (sequelize, DataTypes) {
                 isEmail: true
             }
         },
-        password: {
+        user_password: {
             type: DataTypes.STRING,
             allowNull: false
         }
