@@ -4,32 +4,32 @@ const db = require("../models");
 
 module.exports = {
     findAll: function (req, res) {
-        db.Post
+        db.Posts
             .find(req.query)
-            .then(dbPost => res.json(dbPost))
+            .then(dbPosts => res.json(dbPosts))
             .catch(err => res.status(422).json(err));
     },
     create: function (req, res) {
         db.Post
             .create({
-                title: req.body.title,
-                body: req.body.body
+                post_title: req.body.title,
+                post_body: req.body.body
 
             })
-            .then(dbPost => res.json(dbPost))
+            .then(dbPosts => res.json(dbPosts))
             .catch(err => res.status(422).json(err));
     },
     update: function (req, res) {
         db.Post
             .findOneAndUpdate({ _id: req.params.id }, req.body)
-            .then(dbPost => res.json(dbPost))
+            .then(dbPosts => res.json(dbPosts))
             .catch(err => res.status(422).json(err));
     },
     remove: function (req, res) {
         db.Post
             .findById({ _id: req.params.id })
-            .then(dbPost => dbPost.remove())
-            .then(dbPost => res.json(dbPost))
+            .then(dbPosts => dbPosts.remove())
+            .then(dbPosts => res.json(dbPosts))
             .catch(err => res.status(422).json(err));
     }
 

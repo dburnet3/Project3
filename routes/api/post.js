@@ -5,11 +5,11 @@ const postController = require("../../controllers/postController");
 
 router.route("/")
     .get(postController.findAll)
-    .post(postController.create)
+    .post(postController.create);
 
 
-    //Matches with "/api/post:id"
-
+//Matches with "/api/post:id"
+router
     .route("/:id")
     .delete(postController.remove)
     .put(postController.update);

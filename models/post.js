@@ -1,12 +1,10 @@
 module.exports = function (sequelize, DataTypes) {
     const Post = sequelize.define("Post", {
-        title: {
+        post_title: {
             type: DataTypes.STRING,
-            allowNull: false
         },
-        body: {
-            type: DataTypes.TEXT,
-            allowNull: false
+        post_body: {
+            type: DataTypes.STRING,
         }
     });
     return Post;
