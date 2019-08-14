@@ -15,9 +15,9 @@ if (process.env.NODE_ENV === "production") {
 }
 
 //Initializing passport
-app.use(passport.initialize())
-app.use(passport.session()) // this calls serializeuser and deserialize use
-//API Routes
+// app.use(passport.initialize())
+// app.use(passport.session()) // this calls serializeuser and deserialize use
+// //API Routes
 app.use(routes);
 
 // Define API routes here

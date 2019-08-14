@@ -18,15 +18,18 @@ const signup = require("./signup");
 
 // router.use("api/logout", logout);
 
-router.use("/api/post", post);
+// router.use("/api/post", post);
 
-// router.use("api/puc", puc);
+// router.use("/api/puc", puc);
 
-// router.use("api/signup", signup);
+// router.get("/api/puc", function (req, res) {
+//     res.json({});
+// });
+router.use("/api/signup", signup);
 
-//If no API routes are hit, send the React app
-router.use(function (req, res) {
-    res.sendFile("/Users/deniseburnett/projects/Project3/client/public/index.html");
-});
+// //If no API routes are hit, send the React app
+// router.use("*", function (req, res) {
+//     res.sendFile(path.join(__dirname, "./client/build/index.html"));
+// });
 
 module.exports = router;
