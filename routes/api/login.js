@@ -6,6 +6,6 @@ router.route("/")
     .post(signupController.create)
 
 router.route("/:id")
-    .get(signupController.findById);
+    .get(signupController.findOne);
 
 module.exports = router;

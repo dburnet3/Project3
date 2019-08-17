@@ -14,7 +14,7 @@ const signup = require("./signup");
 //API Routes
 // router.use("/api/activities", activities); //<- like this
 
-// router.use("api/login", login);
+router.use("/api/login", login);
 
 // router.use("api/logout", logout);
 
@@ -25,7 +25,7 @@ const signup = require("./signup");
 // router.get("/api/puc", function (req, res) {
 //     res.json({});
 // });
-router.use("/api/signup", signup);
+// router.use("/api/signup", signup);
 
 // //If no API routes are hit, send the React app
 // router.use("*", function (req, res) {

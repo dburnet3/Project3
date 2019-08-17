@@ -5,7 +5,19 @@ const db = require("../models");
 module.exports = {
     update: function (req, res) {
         db.Activity
-            .findOneAndUpdate({ _id: req.params.id }, req.body)
+            // .update({ _id: req.params.id }, { where: req.body })
+            .update(req.body, {
+                where: {
+                    title: req.body.title,
+                    time_slots: req.body.time_slots
+                }
+            })
+            .then(dbActivity => res.json(dbActivity))
+            .catch(err => res.status(422).json(err));
+    },
+    create: function (req, res) {
+        db.Activity
+            .create(req.body)
             .then(dbActivity => res.json(dbActivity))
             .catch(err => res.status(422).json(err));
     }
