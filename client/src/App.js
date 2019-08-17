@@ -1,21 +1,27 @@
-import React, { Component } from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import dashboard from "./pages/dashboard";
+import homepage from "./pages/homepage";
+import invitationPage from "./pages/invitationPage";
+import managePuc from "./pages/managePuc";
+import registerPuc from "./pages/registerPuc";
+import selectPuc from "./pages/selectPuc";
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          This is your homepage!!
-        </p>
+
+function App() {
+  return (
+    <Router>
+      <div>
+        <Nav />
+        <Switch>
+          <Route exact path="/" component={dashboard} />
+          <Route exact path="/books" component={dashboard} />
+          <Route exact path="/books/:id" component={Detail} />
+          <Route component={NoMatch} />
+        </Switch>
       </div>
-    );
-  }
+    </Router>
+  );
 }
 
 export default App;
