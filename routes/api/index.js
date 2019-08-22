@@ -12,9 +12,9 @@ const signup = require("./signup");
 // then add all of your API routes
 //API Routes
 //API Routes
-// router.use("/api/activities", activities); //<- like this
+router.use("/api/activities", activities); //<- like this
 
-router.use("/api/login", login);
+// router.use("/api/login", login);
 
 // router.use("api/logout", logout);
 
