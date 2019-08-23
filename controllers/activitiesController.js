@@ -9,7 +9,9 @@ module.exports = {
             .update(req.body, {
                 where: {
                     title: req.body.title,
-                    time_slots: req.body.time_slots
+                    time_slots: req.body.time_slots,
+                    dow: req.body.dow,
+                    taken: req.body.taken
                 }
             })
             .then(dbActivity => res.json(dbActivity))

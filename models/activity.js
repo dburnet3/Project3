@@ -7,6 +7,14 @@ module.exports = function (sequelize, DataTypes) {
         time_slots: {
             type: DataTypes.STRING,
             allowNull: false
+        },
+        dow: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        taken: {
+            type: DataTypes.BOOLEAN,
+            allowNull: true
         }
     });
     return Activity;

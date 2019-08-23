@@ -20,7 +20,7 @@ router.use("/api/activities", activities); //<- like this
 
 // router.use("/api/post", post);
 
-// router.use("/api/puc", puc);
+router.use("/api/puc", puc);
 
 // router.get("/api/puc", function (req, res) {
 //     res.json({});

@@ -3,8 +3,8 @@ import axios from "axios";
 export default {
 
     //Create activities
-    postActivities: function () {
-        return axios.post("/api/activities");
+    postActivities: function (data) {
+        return axios.post("/api/activities", data);
     },
 
     updateActivities: function (id) {
@@ -20,8 +20,8 @@ export default {
         return axios.post("/api/signup");
     },
 
-    createPuc: function () {
-        return axios.post("/api/puc");
+    createPuc: function (data) {
+        return axios.post("/api/puc", data);
     },
 
     getPost: function () {
