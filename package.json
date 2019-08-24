@@ -33,6 +33,7 @@
     "react-horizontal-scrolling-menu": "^0.7.3",
     "react-router-dom": "^5.0.1",
     "reactstrap": "^8.0.1",
+    "semantic-ui-react": "^0.88.0",
     "sequelize": "^5.13.1"
   }
 }
