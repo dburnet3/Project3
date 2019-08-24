@@ -4,35 +4,18 @@ import {
     FormGroup, Label, Input,
     Button,
 } from 'reactstrap';
+import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+
 import API from "../../utils/API";
 
 
-class Puc extends Component {
+class Puc_Activities extends Component {
 
     state = {
         puc_name: "",
         title: "",
         time_slots: "",
         dow: ""
-    };
-
-    //This handles the input change for the Puc input field
-    handleInputChange = event => {
-        const { name, value } = event.target;
-        this.setState({
-            [name]: value
-        });
-    };
-
-    //This handles the form submission for adding a Puc
-    handleFormSubmitPuc = event => {
-        event.preventDefault();
-        API.createPuc({
-            puc_name: this.state.puc_name
-        })
-            .then(res => this.createPuc(res))
-            .catch(err => console.log(err));
-
     };
 
     //This handles the input changes for the activity name and time slot fields
@@ -56,26 +39,11 @@ class Puc extends Component {
 
     };
 
+
     render() {
         return (
             <Container className="App">
-                <h2>Manage Person Under Care</h2>
-                <Form className="form">
-                    <Col>
-                        <FormGroup>
-                            <Label>Name</Label>
-                            <Input
-                                name="puc_name"
-                                id="Puc_name"
-                                value={this.state.puc_name}
-                                onChange={this.handleInputChange}
-                            />
-                            <Button id="add_Puc" onClick={this.handleFormSubmitPuc}>Add</Button>
-                        </FormGroup>
-                    </Col>
-                </Form>
-                <br />
-                <h2>Create Activities for: insert Puc name</h2>
+                <h2>Create Activities for: 'insert Puc name'</h2>
                 <Form className="form">
                     <Col>
                         <FormGroup>
@@ -98,27 +66,31 @@ class Puc extends Component {
                                 onChange={this.handleInputChangeActivities}
 
                             />
-                            <legend>Day of the Week</legend>
+                        </FormGroup>
+                        <legend>Day of the Week</legend>
 
-                            <Label check>
+                        <FormGroup check inline>
+                            <Label>
                                 <Input
                                     type="dow"
                                     name="dow"
                                     id="dow"
+                                    placeholder="Monday"
                                     value={this.state.dow}
                                     onChange={this.handleInputChangeActivities}
                                 />
+
                             </Label>
-
-
-                            <Button id="add_Puc" onClick={this.handleFormSubmitPucActivities}>Add</Button>
+                        </FormGroup>
+                        <FormGroup>
+                            <Button onClick={this.handleFormSubmitPucActivities}>Add</Button>
                         </FormGroup>
                     </Col>
                 </Form>
 
-            </Container>
+            </Container >
         );
     }
 }
 
-export default Puc;
+export default Puc_Activities;
