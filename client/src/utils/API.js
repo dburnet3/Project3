@@ -24,8 +24,8 @@ export default {
         return axios.post("/api/puc", data);
     },
 
-    getPost: function () {
-        return axios.get("/api/post");
+    getPost: function (data) {
+        return axios.get("/api/post", data);
     },
 
     createPost: function (data) {

@@ -5,7 +5,7 @@ const db = require("../models");
 module.exports = {
     findAll: function (req, res) {
         db.Post
-            .find(req.query)
+            .findAll(req.query)
             .then(dbPost => res.json(dbPost))
             .catch(err => res.status(422).json(err));
     },

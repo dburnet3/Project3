@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 import {
     Container, Col, Form,
     FormGroup, Label, Input,
-    Button, Table
+    Button, ListGroup, ListGroupItem, Jumbotron
 } from 'reactstrap';
-import SnackbarContent from '@material-ui/core/SnackbarContent';
 import API from "../../utils/API";
 
 
@@ -13,6 +12,7 @@ import API from "../../utils/API";
 class Posts extends Component {
 
     state = {
+        result: [],
         post_title: "",
         post_body: ""
 
@@ -38,14 +38,23 @@ class Posts extends Component {
 
     };
 
-    loadPosts = event => {
-        API.getPost()
-            .then(res => this.setState({ post: res.data, post_title: "", post_body: "" })
-            )
+    // loadPosts = event => {
+    //     API.getPost()
+    //         .then(res => this.setState({ post: res.data, post_title: "", post_body: "" })
+    //         )
+    //         .catch(err => console.log(err));
+    // };
+
+    //When the component mounts, it will search for all of the posts in the db
+    componentDidMount() {
+        this.displayPosts();
+    }
+
+    displayPosts = query => {
+        API.getPost(query)
+            .then(res => this.setState({ result: res.data }))
             .catch(err => console.log(err));
     };
-
-
 
     render() {
         return (
@@ -75,19 +84,31 @@ class Posts extends Component {
                         <br />
                         <br />
                         <FormGroup>
-                            <Table borderless>
-                                <thead>
-                                    <tr>
-                                        <th>Discussion Board</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th scope="row">Recent Posts</th>
-                                        <td></td>
-                                    </tr>
-                                </tbody>
-                            </Table>
+                            <Jumbotron>
+                                <h1>Discussion Board</h1>
+                            </Jumbotron>
+                            {this.state.result.length ? (
+                                <ListGroup>
+                                    {this.state.result.map(result => (
+                                        <ListGroupItem key={result._id}>
+                                            <strong>
+                                                Title:
+                                            </strong>
+                                            <p> {result.post_title}</p>
+                                            <br />
+                                            <strong>
+                                                Message:
+                                            </strong>
+                                            <p>{result.post_body}</p>
+
+
+                                        </ListGroupItem>
+                                    ))}
+                                </ListGroup>
+                            ) : (
+                                    <h3>No Results to Display</h3>
+                                )}
+
                         </FormGroup>
                     </Col>
                 </Form>
