@@ -18,7 +18,7 @@ router.use("/api/activities", activities); //<- like this
 
 // router.use("api/logout", logout);
 
-// router.use("/api/post", post);
+router.use("/api/post", post);
 
 router.use("/api/puc", puc);
 

@@ -17,7 +17,7 @@ export default {
     },
 
     createAccount: function () {
-        return axios.post("/api/signup");
+        return axios.post("/api/signup".data);
     },
 
     createPuc: function (data) {
@@ -28,8 +28,8 @@ export default {
         return axios.get("/api/post");
     },
 
-    createPost: function () {
-        return axios.post("/api/post");
+    createPost: function (data) {
+        return axios.post("/api/post", data);
     },
 
     deletePost: function (id) {
