@@ -16,7 +16,7 @@ class Home extends Component {
             <div>
                 <Row>
                     <Col xs="6">
-                        <h1 id='intro'>Connecting caregivers to improve health outcomes</h1>
+                        {/* <h1 id='intro'>Connecting caregivers to improve health outcomes</h1> */}
                         <br />
 
                     </Col>
