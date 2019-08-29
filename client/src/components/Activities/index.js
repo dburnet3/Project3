@@ -9,6 +9,7 @@ import Moment from 'react-moment';
 import right from '../../assets/images/next (1).png';
 import left from '../../assets/images/back (1).png';
 import './activities.css';
+import { ListGroup, ListGroupItem, Jumbotron } from 'reactstrap';
 
 
 //Objective - if dow is selected then display activities for that day
@@ -21,11 +22,10 @@ import './activities.css';
 
 class Activities extends Component {
 
-    constructor(props) {
-        super(props);
-        this.mondayAct = this.mondayAct.bind(this);
-    }
     state = {
+        result: [],
+        title: "",
+        time_slots: "",
         taken: "",
     };
 
@@ -48,11 +48,16 @@ class Activities extends Component {
             .catch(err => console.log(err));
     };
 
-    //This handles the onClick event for selecting the dow
-    mondayAct() {
-        alert('Hello!');
-        API.postActivities
+    componentDidMount() {
+        this.weekActivities();
     }
+
+    //This handles the onClick event for selecting the dow
+    weekActivities = query => {
+        API.getActivities(query)
+            .then(res => this.setState({ result: res.data }))
+            .catch(err => console.log(err));
+    };
 
     render() {
 
@@ -65,20 +70,41 @@ class Activities extends Component {
                 </Navbar>
                 <br />
 
-                <div id="dow"><div onClick={this.mondayAct}>Monday</div> &nbsp; Tuesday &nbsp; Wednesday &nbsp; <b><u>Thursday</u></b> &nbsp; Friday &nbsp; Saturday &nbsp; Sunday</div>
+                <div id="dow">Monday&nbsp; Tuesday &nbsp; Wednesday &nbsp; <b><u>Thursday</u></b> &nbsp; Friday &nbsp; Saturday &nbsp; Sunday</div>
                 <br />
+                <div title={this.state.title} onClick={this.weekActivities} >Search Entire Week Activities</div>
                 <Container>
 
 
                     <h2>Activites</h2>
                     <Row>
                         <Col xs="6" sm="4">
-                            <Card>
-                                <CardBody>
-                                    <CardTitle><h2>Monday</h2></CardTitle>
-                                    <hr />
-                                    <Form >
-                                        <FormGroup check id="Feeding">
+                            <FormGroup>
+
+
+                                <ListGroup>
+
+                                    <ListGroupItem result={this.state.result} />
+
+
+
+
+
+                                </ListGroup>
+
+
+                            </FormGroup>
+                        </Col>
+                    </Row>
+                </Container>
+            </div>
+        );
+    }
+}
+
+export default Activities;
+
+{/* <FormGroup check id="Feeding">
                                             <legend>Feeding</legend>
                                             <Label check>
                                                 <Input type="checkbox" name="morning" value={this.state.taken} onChange={this.handleInputChange} />{''}
@@ -562,11 +588,4 @@ class Activities extends Component {
                                 </CardBody>
                             </Card>
                         </Col>
-                    </Row>
-                </Container>
-            </div>
-        );
-    }
-}
-
-export default Activities;
+                    </Row> */}

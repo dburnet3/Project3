@@ -1,14 +1,19 @@
 import React, { Component } from 'react';
 import {
-    Container, Col, Form,
+    Container, Col, Row, Form,
     FormGroup, Label, Input,
     Button,
 } from 'reactstrap';
 
 import API from "../../utils/API";
+import Activities from "../Activities/index";
+import { BrowserRouter as Route, Link } from 'react-router-dom';
+
 
 
 class Puc_Activities extends Component {
+
+
     constructor(props) {
         super(props);
         this.state = {
@@ -18,6 +23,7 @@ class Puc_Activities extends Component {
             dow: "",
             checked: false
         };
+
     }
 
 
@@ -129,6 +135,15 @@ class Puc_Activities extends Component {
                             <Button onClick={this.handleFormSubmitPucActivities}>Add</Button>
                         </FormGroup>
                     </Col>
+                    <Row>
+                        <Col xs="6">
+                            <Button color="primary" className="px-4">
+                                <Link to={'../Activities'}><Route path='../Activities' component={Activities}>Activities Dashboard</Route></Link>
+
+
+                            </Button>
+                        </Col>
+                    </Row>
                 </Form>
 
             </Container >

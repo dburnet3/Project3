@@ -24,8 +24,9 @@ class App extends Component {
       <Router>
         <div>
 
-          <h2> <img src={icon} alt="icon" />Provision</h2>
+
           <nav className="navbar navbar-expand-lg navbar-light bg-light">
+            <h2> <img src={icon} alt="icon" />Provision</h2>
             <ul className="navbar-nav mr-auto">
               <li><Link to={'/'} className="nav-link"> Home </Link></li>
               <li><Link to={'/Activities'} className="nav-link">Activities</Link></li>
@@ -34,7 +35,7 @@ class App extends Component {
               <li><Link to={'/Posts'} className="nav-link">Discussion Board</Link></li>
             </ul>
           </nav>
-          <hr />
+
           <Switch>
             <Route exact path='/' component={Home} />
             <Route path='/Activities' component={Activities} />
