@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import {
-    Container, Col, Row, Form,
+    Col, Row, Form,
     FormGroup, Label, Input,
     Button, Card, CardBody
 } from 'reactstrap';
-import home from '../../assets/images/home.png';
 import './home.css';
 
 class Home extends Component {

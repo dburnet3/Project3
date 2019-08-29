@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from 'reactstrap';
-import { Card, CardBody, CardTitle } from 'reactstrap';
-import { Button, Input, Label } from 'reactstrap';
-import { Form, FormGroup } from 'reactstrap';
+import { FormGroup } from 'reactstrap';
 import API from '../../utils/API';
 import { Navbar, NavbarBrand } from 'reactstrap';
 import Moment from 'react-moment';
 import right from '../../assets/images/next (1).png';
 import left from '../../assets/images/back (1).png';
 import './activities.css';
-import { ListGroup, ListGroupItem, Jumbotron } from 'reactstrap';
+import { ListGroup, ListGroupItem } from 'reactstrap';
 
 
 //Objective - if dow is selected then display activities for that day
