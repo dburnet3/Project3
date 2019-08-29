@@ -8,15 +8,15 @@ export default {
     },
 
     getActivities: function (data) {
-        return axios.get("/api/activities/" + data);
+        return axios.get("/api/activities" + data);
     },
 
     updateActivities: function (id) {
-        return axios.put("/api/activities/" + id);
+        return axios.put("/api/activities" + id);
     },
 
     getAccount: function (id) {
-        return axios.get("/api/login/" + id);
+        return axios.get("/api/login" + id);
 
     },
 
