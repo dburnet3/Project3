@@ -18,6 +18,20 @@
   font-size: large;
 }
 
+h1{
+  font-family: 'Quicksand', sans-serif;
+
+}
+h2{
+  font-family: 'Quicksand', sans-serif;
+
+}
+
+p{
+  font-family: 'Quicksand', sans-serif;
+
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }

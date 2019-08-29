@@ -5,6 +5,8 @@ import Puc_Creation from './components/Puc_Creation';
 import Activities from "./components/Activities";
 import Puc_Activities from './components/Puc_Activities';
 import Posts from './components/Posts';
+import icon from './assets/images/provision.png';
+import './App.css';
 // import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // import logo from "./logo.svg";
 // import dashboard from "./pages/dashboard";
@@ -21,7 +23,8 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <h2>Provision</h2>
+
+          <h2> <img src={icon} alt="icon" />Provision</h2>
           <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <ul className="navbar-nav mr-auto">
               <li><Link to={'/'} className="nav-link"> Home </Link></li>

@@ -4,23 +4,28 @@ import {
     FormGroup, Label, Input,
     Button,
 } from 'reactstrap';
-import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 
 import API from "../../utils/API";
 
 
 class Puc_Activities extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            puc_name: "",
+            title: "",
+            time_slots: "",
+            dow: "",
+            checked: false
+        };
+    }
 
-    state = {
-        puc_name: "",
-        title: "",
-        time_slots: "",
-        dow: ""
-    };
 
     //This handles the input changes for the activity name and time slot fields
     handleInputChangeActivities = event => {
-        const { name, value } = event.target;
+        const target = event.target;
+        const value = target.type === 'checkbox' ? target.checked : target.value;
+        const name = target.name;
         this.setState({
             [name]: value
         });
@@ -39,6 +44,19 @@ class Puc_Activities extends Component {
 
     };
 
+
+    // handleInputChangeCheckbox = event => {
+    //     const target = event.target;
+    //     const value = target.type === 'checkbox' ? target.checked : target.value;
+    //     const name = target.name;
+    // }
+    // //This handles the click event for the dow checkboxes
+    // handleCheckClick = event => {
+    //     const
+    //     this.setState({ 
+    //         [checked]: value
+    //     });
+    // }
 
     render() {
         return (
@@ -68,6 +86,31 @@ class Puc_Activities extends Component {
                             />
                         </FormGroup>
                         <legend>Day of the Week</legend>
+                        {/* <FormGroup check>
+                            <Label check>
+                                <Input type="checkbox" />{' '}
+                                Sunday
+                            </Label>
+                        </FormGroup>
+                        <FormGroup check>
+                            <Label check>
+                                <Input name="Monday" type="checkbox" checked={this.state.checked} value={this.state.dow} onChange={this.handleInputChangeActivities} />{' '}
+                                Monday
+                            </Label>
+                        </FormGroup>
+                        <FormGroup check>
+                            <Label check>
+                                <Input type="checkbox" />{' '}
+                                Tuesday
+                             </Label>
+                        </FormGroup>
+                        <FormGroup check>
+                            <Label check>
+                                <Input type="checkbox" />{' '}
+                                Wednesday
+                            </Label>
+                        </FormGroup> */}
+
 
                         <FormGroup check inline>
                             <Label>

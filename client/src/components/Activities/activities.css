@@ -1,0 +1,13 @@
+#dow{
+    margin-left:5%;
+}
+
+.underline_dotted{
+        border-bottom: 1px black dashed;
+}
+
+.underline {
+    /* border-bottom: 3px black solid; */
+    text-decoration: underline;
+    font-weight:bold;
+  }
