@@ -3,6 +3,12 @@ const db = require("../models");
 //Defining methods for the activitiesController
 
 module.exports = {
+    findAll: function (req, res) {
+        db.Activity
+            .findAll(req.query)
+            .then(dbActivity => res.json(dbActivity))
+            .catch(err => res.status(422).json(err));
+    },
     update: function (req, res) {
         db.Activity
             // .update({ _id: req.params.id }, { where: req.body })

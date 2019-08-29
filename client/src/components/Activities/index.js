@@ -11,10 +11,20 @@ import left from '../../assets/images/back (1).png';
 import './activities.css';
 
 
-// import API from "../../utils/API";
+//Objective - if dow is selected then display activities for that day
 
+//Step 1 - Make dow selectable. 
+
+//Step 2 - onClick search the activities table for entries that match
+
+//Step 3 - display pulled db entries on individual cards
 
 class Activities extends Component {
+
+    constructor(props) {
+        super(props);
+        this.mondayAct = this.mondayAct.bind(this);
+    }
     state = {
         taken: "",
     };
@@ -38,6 +48,12 @@ class Activities extends Component {
             .catch(err => console.log(err));
     };
 
+    //This handles the onClick event for selecting the dow
+    mondayAct() {
+        alert('Hello!');
+        API.postActivities
+    }
+
     render() {
 
         return (
@@ -49,7 +65,7 @@ class Activities extends Component {
                 </Navbar>
                 <br />
 
-                <div id="dow">Monday &nbsp; Tuesday &nbsp; Wednesday &nbsp; <b><u>Thursday</u></b> &nbsp; Friday &nbsp; Saturday &nbsp; Sunday</div>
+                <div id="dow"><div onClick={this.mondayAct}>Monday</div> &nbsp; Tuesday &nbsp; Wednesday &nbsp; <b><u>Thursday</u></b> &nbsp; Friday &nbsp; Saturday &nbsp; Sunday</div>
                 <br />
                 <Container>
 

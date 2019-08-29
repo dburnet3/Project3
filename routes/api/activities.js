@@ -5,6 +5,7 @@ const activitiesController = require("../../controllers/activitiesController.js"
 
 router.route("/")
     .post(activitiesController.create)
+    .get(activitiesController.findAll)
     .put(activitiesController.update);
 
 module.exports = router;

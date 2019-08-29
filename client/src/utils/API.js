@@ -7,6 +7,10 @@ export default {
         return axios.post("/api/activities", data);
     },
 
+    getActivities: function (data) {
+        return axios.get("/api/activities/" + data);
+    },
+
     updateActivities: function (id) {
         return axios.put("/api/activities/" + id);
     },
