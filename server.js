@@ -30,7 +30,7 @@ app.get("*", (req, res) => {
 
 //Syncing the sequelize models and then starting the express app
 
-db.sequelize.sync({ force: true }).then(function () {
+db.sequelize.sync({ force: false }).then(function () {
   app.listen(PORT, function () {
     console.log(`🌎 ==> API server now on port ${PORT}!`);
   });
