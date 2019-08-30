@@ -16,11 +16,6 @@
         "operatorsAliases": false
     },
     "production": {
-        "username": "root",
-        "password": "root",
-        "database": "provision_db",
-        "host": "127.0.0.1",
-        "dialect": "mysql",
         "use_env_variable": "JAWSDB_URL",
         "operatorsAliases": false
     }
