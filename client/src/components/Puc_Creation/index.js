@@ -5,7 +5,8 @@ import {
     Button,
 } from 'reactstrap';
 import API from "../../utils/API";
-
+import './puc_creation.css';
+import user from '../../assets/images/user.png';
 
 class Puc_Creation extends Component {
 
@@ -49,6 +50,8 @@ class Puc_Creation extends Component {
     render() {
         return (
             <Container className="App">
+                <img src={user} alt="user" id="user" />
+                <br />
                 <h2>Manage Person Under Care</h2>
                 <Form className="form">
                     <Col>
