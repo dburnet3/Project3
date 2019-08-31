@@ -70,7 +70,7 @@ class Puc_Activities extends Component {
         return (
             <Container className="App">
                 <img src={notification} id="notification" />
-                <h2>Create Activities for: {this.props.value}</h2>
+                <h2>Create Activities</h2>
                 <Form className="form">
                     <Col>
                         <FormGroup>
