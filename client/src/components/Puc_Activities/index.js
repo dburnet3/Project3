@@ -8,6 +8,8 @@ import {
 import API from "../../utils/API";
 import Activities from "../Activities/index";
 import { BrowserRouter as Route, Link } from 'react-router-dom';
+import '../Puc_Creation';
+import notification from '../../assets/images/notification.png';
 
 
 
@@ -67,7 +69,8 @@ class Puc_Activities extends Component {
     render() {
         return (
             <Container className="App">
-                <h2>Create Activities for: 'insert Puc name'</h2>
+                <img src={notification} id="notification" />
+                <h2>Create Activities for: {this.props.value}</h2>
                 <Form className="form">
                     <Col>
                         <FormGroup>

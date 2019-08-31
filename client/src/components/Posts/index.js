@@ -5,6 +5,7 @@ import {
     Button, ListGroup, ListGroupItem, Jumbotron
 } from 'reactstrap';
 import API from "../../utils/API";
+import discussion from '../../assets/images/discuss-issue.png';
 
 
 
@@ -59,6 +60,7 @@ class Posts extends Component {
     render() {
         return (
             <Container className="App">
+                <img src={discussion} />
                 <h2>Share your thoughts!</h2>
                 <Form className="form">
                     <Col>

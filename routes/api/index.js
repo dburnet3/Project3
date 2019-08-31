@@ -22,9 +22,9 @@ router.use("/api/post", post);
 
 router.use("/api/puc", puc);
 
-router.get("/api/puc", function (req, res) {
-    res.json({});
-});
+// router.get("/api/puc", function (req, res) {
+//     res.json({});
+// });
 router.use("/api/signup", signup);
 
 // //If no API routes are hit, send the React app

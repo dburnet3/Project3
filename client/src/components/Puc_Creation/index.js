@@ -62,6 +62,7 @@ class Puc_Creation extends Component {
                                 id="Puc_name"
                                 value={this.state.puc_name}
                                 onChange={this.handleInputChange}
+
                             />
                             <br />
                             <Button id="add_Puc" onClick={this.handleFormSubmitPuc}>Add</Button>
