@@ -29,7 +29,7 @@ class Home extends Component {
                                     <h2>Sign In</h2>
 
                                     <Col lg>
-                                        <Form className="form">
+                                        <Form className="form" id="form">
                                             <Col>
                                                 <FormGroup>
                                                     <Label>Email</Label>
