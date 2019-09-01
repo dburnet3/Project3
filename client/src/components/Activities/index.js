@@ -78,17 +78,32 @@ class Activities extends Component {
                     <Row>
                         <Col xs="6" sm="4">
                             <FormGroup>
+                                {this.state.result.length ? (
+                                    <ListGroup>
+                                        {this.state.result.map(result => (
+                                            <ListGroupItem key={result._id}>
+                                                <strong>
+                                                    Title:
+                </strong>
+                                                <p> {result.title}</p>
+                                                <br />
+                                                <strong>
+                                                    Time Slot:
+                </strong>
+                                                <p>{result.time_slots}</p>
+                                                <br />
+                                                <strong>
+                                                    Day of Week:
+                </strong>
+                                                <p>{result.dow}</p>
 
 
-                                <ListGroup>
-
-                                    <ListGroupItem result={this.state.result} />
-
-
-
-
-
-                                </ListGroup>
+                                            </ListGroupItem>
+                                        ))}
+                                    </ListGroup>
+                                ) : (
+                                        <h3>No Results to Display</h3>
+                                    )}
 
 
                             </FormGroup>
