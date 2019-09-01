@@ -53,8 +53,9 @@ class Activities extends Component {
     //This handles the onClick event for selecting the dow
     weekActivities = query => {
         API.getActivities(query)
-            .then(res => this.setState({ result: res.data }))
+            .then(res => console.log(this.setState({ result: res.data })))
             .catch(err => console.log(err));
+
     };
 
     render() {
