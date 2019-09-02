@@ -9,7 +9,7 @@ import left from '../../assets/images/back (1).png';
 import './activities.css';
 import { Card, Button, CardImg, CardTitle, CardText, CardGroup, CardSubtitle, CardBody } from 'reactstrap';
 import bookmark from '../../assets/images/bookmark.png';
-
+import '../../assets/pretty-checkbox.scss';
 //Objective - if dow is selected then display activities for that day
 
 //Step 1 - Make dow selectable. 
@@ -108,7 +108,7 @@ class Activities extends Component {
                                                     <input type="checkbox" />
                                                     <div class="state">
                                                         <i class="icon mdi mdi-check"></i>
-                                                        <label> Commit</label>
+                                                        <label> Taken</label>
                                                     </div>
                                                 </div>
                                             </CardBody>
