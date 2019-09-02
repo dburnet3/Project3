@@ -104,9 +104,9 @@ class Activities extends Component {
                                                 <p>{result.dow}</p>
 
                                                 <br />
-                                                <div class="pretty p-icon p-round">
+                                                <div class="pretty p-icon p-round p-jelly">
                                                     <input type="checkbox" />
-                                                    <div class="state">
+                                                    <div class="state p-primary">
                                                         <i class="icon mdi mdi-check"></i>
                                                         <label> Taken</label>
                                                     </div>
