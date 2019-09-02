@@ -79,36 +79,40 @@ class Activities extends Component {
                     <h2>Activites</h2>
                     <Row>
                         <Col xs="6" sm="4">
-                            <CardGroup>
-                                {this.state.result.length ? (
-                                    <Card>
-                                        {this.state.result.map(result => (
-                                            <CardBody key={result._id}>
+                            {this.state.result.length ? (
+                                <CardGroup>
+
+                                    {this.state.result.map(result => (
+                                        <Card key={result._id}>
+
+                                            <CardBody >
                                                 <CardSubtitle>
                                                     Title:
-                </CardSubtitle>
+                                                </CardSubtitle>
                                                 <p> {result.title}</p>
                                                 <br />
                                                 <CardSubtitle>
                                                     Time Slot:
-                </CardSubtitle>
+                                                 </CardSubtitle>
                                                 <p>{result.time_slots}</p>
                                                 <br />
                                                 <CardSubtitle>
                                                     Day of Week:
-                </CardSubtitle>
+                                                 </CardSubtitle>
                                                 <p>{result.dow}</p>
 
 
                                             </CardBody>
-                                        ))}
-                                    </Card>
-                                ) : (
-                                        <h3>No Results to Display</h3>
-                                    )}
+
+                                        </Card>
+                                    ))}
 
 
-                            </CardGroup>
+
+                                </CardGroup>
+                            ) : (
+                                    <h3>No Results to Display</h3>
+                                )}
                         </Col>
                     </Row>
                 </Container>
