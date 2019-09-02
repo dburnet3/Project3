@@ -24,7 +24,7 @@ class Activities extends Component {
         result: [],
         title: "",
         time_slots: "",
-        taken: "",
+        taken: false,
     };
 
 
@@ -109,7 +109,7 @@ class Activities extends Component {
                                                 <div class="pretty p-icon p-round p-jelly">
                                                     <input type="checkbox"
                                                         onClick={this.handleUpdate}
-                                                        checked={this.state.taken === "true"} />
+                                                        checked={this.state.taken === true} />
                                                     <div class="state p-primary">
                                                         <i class="icon mdi mdi-check"></i>
                                                         <label> Taken</label>
