@@ -37,12 +37,12 @@ class Activities extends Component {
     };
 
     //This handles the form submission for 'taking' an activity
-    handleFormSubmit = event => {
+    handleUpdate = event => {
         event.preventDefault();
-        API.postActivities({
+        API.updateActivities({
             taken: this.state.taken
         })
-            .then(res => this.postActivities(res))
+            .then(res => this.updateActivities(res))
             .catch(err => console.log(err));
     };
 
@@ -58,6 +58,8 @@ class Activities extends Component {
 
     };
 
+
+
     render() {
 
         return (
@@ -71,7 +73,7 @@ class Activities extends Component {
 
                 <div id="dow">Monday&nbsp; Tuesday &nbsp; Wednesday &nbsp; <b><u>Thursday</u></b> &nbsp; Friday &nbsp; Saturday &nbsp; Sunday</div>
                 <br />
-                <div title={this.state.title} onClick={this.weekActivities} >Search Entire Week Activities</div>
+                {/* <div title={this.state.title} onClick={this.weekActivities} >Search Entire Week Activities</div> */}
                 <Container>
 
 
@@ -92,12 +94,12 @@ class Activities extends Component {
                                                     Title:
                                                 </CardSubtitle>
                                                 <p> {result.title}</p>
-                                                <br />
+
                                                 <CardSubtitle>
                                                     Time Slot:
                                                  </CardSubtitle>
                                                 <p>{result.time_slots}</p>
-                                                <br />
+
                                                 <CardSubtitle>
                                                     Day of Week:
                                                  </CardSubtitle>
@@ -105,7 +107,9 @@ class Activities extends Component {
 
                                                 <br />
                                                 <div class="pretty p-icon p-round p-jelly">
-                                                    <input type="checkbox" />
+                                                    <input type="checkbox"
+                                                        value={this.state.taken}
+                                                        onClick={this.handleUpdate} />
                                                     <div class="state p-primary">
                                                         <i class="icon mdi mdi-check"></i>
                                                         <label> Taken</label>
