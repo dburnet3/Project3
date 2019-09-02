@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from 'reactstrap';
-import { FormGroup } from 'reactstrap';
 import API from '../../utils/API';
 import { Navbar, NavbarBrand } from 'reactstrap';
 import Moment from 'react-moment';
 import right from '../../assets/images/next (1).png';
 import left from '../../assets/images/back (1).png';
 import './activities.css';
-import { Card, Button, CardImg, CardTitle, CardText, CardGroup, CardSubtitle, CardBody } from 'reactstrap';
+import { Card, Button, CardGroup, CardSubtitle, CardBody } from 'reactstrap';
 import bookmark from '../../assets/images/bookmark.png';
 import '../../assets/pretty-checkbox.scss';
+
 //Objective - if dow is selected then display activities for that day
 
 //Step 1 - Make dow selectable. 
@@ -67,7 +67,7 @@ class Activities extends Component {
                 <Navbar color="light" light expand="md">
                     <NavbarBrand href="../images/back.png"><strong>Today:</strong> <Moment format="dddd, MMMM Do" className="underline_dotted">
                         2019-09-05
-    </Moment> | <img src={left} alt="left" /> <small>Sept 01 - Sept 07 </small><img src={right} alt="right" /></NavbarBrand>
+    </Moment> | <img src={left} alt="left" /> <small>Sept 01 - Sept 07 </small><img src={right} alt="right" /><Button color="secondary">+ Activity</Button>{' '}</NavbarBrand>
                 </Navbar>
                 <br />
 
