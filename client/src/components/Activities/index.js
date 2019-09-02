@@ -67,7 +67,7 @@ class Activities extends Component {
                 <Navbar color="light" light expand="md">
                     <NavbarBrand href="../images/back.png"><strong>Today:</strong> <Moment format="dddd, MMMM Do" className="underline_dotted">
                         2019-09-05
-    </Moment> | <img src={left} alt="left" /> <small>Sept 01 - Sept 07 </small><img src={right} alt="right" /><Button color="secondary">+ Activity</Button>{' '}</NavbarBrand>
+    </Moment> | <img src={left} alt="left" /> <small>Sept 01 - Sept 07 </small><img src={right} alt="right" /><Button color="secondary" id="addActivity">+ Activity</Button>{' '}</NavbarBrand>
                 </Navbar>
                 <br />
 
