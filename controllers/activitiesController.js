@@ -9,7 +9,7 @@ module.exports = {
             .then(dbActivity => res.json(dbActivity))
             .catch(err => res.status(422).json(err));
     },
-    update: function (req, res) {
+    findOneAndUpdate: function (req, res) {
         db.Activity
         // .update({ _id: req.params.id }, { where: req.body })
         // .update(req.body, {

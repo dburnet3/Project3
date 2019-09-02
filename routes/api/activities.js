@@ -12,7 +12,7 @@ router.route("/")
 //Matches with "/api/activities:id"
 router
     .route("/:id")
-    .put(activitiesController.update);
+    .put(activitiesController.findOneAndUpdate);
 
 
 module.exports = router;
