@@ -108,8 +108,8 @@ class Activities extends Component {
                                                 <br />
                                                 <div class="pretty p-icon p-round p-jelly">
                                                     <input type="checkbox"
-                                                        value={this.state.taken}
-                                                        onClick={this.handleUpdate} />
+                                                        onClick={this.handleUpdate}
+                                                        checked={this.state.taken === "true"} />
                                                     <div class="state p-primary">
                                                         <i class="icon mdi mdi-check"></i>
                                                         <label> Taken</label>

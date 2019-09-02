@@ -6,6 +6,13 @@ const activitiesController = require("../../controllers/activitiesController.js"
 router.route("/")
     .post(activitiesController.create)
     .get(activitiesController.findAll)
+
+
+
+//Matches with "/api/activities:id"
+router
+    .route("/:id")
     .put(activitiesController.update);
+
 
 module.exports = router;
