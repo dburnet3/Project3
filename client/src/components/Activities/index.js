@@ -7,9 +7,8 @@ import Moment from 'react-moment';
 import right from '../../assets/images/next (1).png';
 import left from '../../assets/images/back (1).png';
 import './activities.css';
-import { ListGroup, ListGroupItem } from 'reactstrap';
 import { Card, Button, CardImg, CardTitle, CardText, CardGroup, CardSubtitle, CardBody } from 'reactstrap';
-
+import feeding from '../../assets/images/feeding.png';
 
 //Objective - if dow is selected then display activities for that day
 
@@ -86,6 +85,7 @@ class Activities extends Component {
                                         <Card key={result._id} id="card">
 
                                             <CardBody >
+                                                <CardImg><img src={feeding} alt="feeding" /></CardImg>
                                                 <CardSubtitle>
                                                     Title:
                                                 </CardSubtitle>
