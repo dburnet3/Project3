@@ -78,12 +78,12 @@ class Activities extends Component {
 
                     <h2>Activites</h2>
                     <Row>
-                        <Col xs="6" sm="4">
+                        <Col lg>
                             {this.state.result.length ? (
                                 <CardGroup>
 
                                     {this.state.result.map(result => (
-                                        <Card key={result._id}>
+                                        <Card key={result._id} id="card">
 
                                             <CardBody >
                                                 <CardSubtitle>
@@ -107,7 +107,7 @@ class Activities extends Component {
                                         </Card>
                                     ))}
 
-
+                                    &nbsp;&nbsp;&nbsp;
 
                                 </CardGroup>
                             ) : (
