@@ -8,7 +8,7 @@ export default {
     },
 
     getActivities: function (data) {
-        return axios.get("/api/activities" + data);
+        return axios.get("/api/activities", data);
     },
 
     updateActivities: function (id) {
