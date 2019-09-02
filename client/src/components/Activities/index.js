@@ -8,6 +8,7 @@ import right from '../../assets/images/next (1).png';
 import left from '../../assets/images/back (1).png';
 import './activities.css';
 import { ListGroup, ListGroupItem } from 'reactstrap';
+import { Card, Button, CardImg, CardTitle, CardText, CardGroup, CardSubtitle, CardBody } from 'reactstrap';
 
 
 //Objective - if dow is selected then display activities for that day
@@ -78,36 +79,36 @@ class Activities extends Component {
                     <h2>Activites</h2>
                     <Row>
                         <Col xs="6" sm="4">
-                            <FormGroup>
+                            <CardGroup>
                                 {this.state.result.length ? (
-                                    <ListGroup>
+                                    <Card>
                                         {this.state.result.map(result => (
-                                            <ListGroupItem key={result._id}>
-                                                <strong>
+                                            <CardBody key={result._id}>
+                                                <CardSubtitle>
                                                     Title:
-                </strong>
+                </CardSubtitle>
                                                 <p> {result.title}</p>
                                                 <br />
-                                                <strong>
+                                                <CardSubtitle>
                                                     Time Slot:
-                </strong>
+                </CardSubtitle>
                                                 <p>{result.time_slots}</p>
                                                 <br />
-                                                <strong>
+                                                <CardSubtitle>
                                                     Day of Week:
-                </strong>
+                </CardSubtitle>
                                                 <p>{result.dow}</p>
 
 
-                                            </ListGroupItem>
+                                            </CardBody>
                                         ))}
-                                    </ListGroup>
+                                    </Card>
                                 ) : (
                                         <h3>No Results to Display</h3>
                                     )}
 
 
-                            </FormGroup>
+                            </CardGroup>
                         </Col>
                     </Row>
                 </Container>
