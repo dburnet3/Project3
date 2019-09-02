@@ -85,7 +85,7 @@ class Activities extends Component {
                                         <Card key={result._id} id="card">
 
                                             <CardBody >
-                                                <CardImg><img src={feeding} alt="feeding" /></CardImg>
+                                                <img src={feeding} alt="feeding" />
                                                 <CardSubtitle>
                                                     Title:
                                                 </CardSubtitle>
