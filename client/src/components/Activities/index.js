@@ -8,7 +8,7 @@ import right from '../../assets/images/next (1).png';
 import left from '../../assets/images/back (1).png';
 import './activities.css';
 import { Card, Button, CardImg, CardTitle, CardText, CardGroup, CardSubtitle, CardBody } from 'reactstrap';
-import feeding from '../../assets/images/feeding.png';
+import bookmark from '../../assets/images/bookmark.png';
 
 //Objective - if dow is selected then display activities for that day
 
@@ -85,7 +85,9 @@ class Activities extends Component {
                                         <Card key={result._id} id="card">
 
                                             <CardBody >
-                                                <img src={feeding} alt="feeding" />
+                                                <img src={bookmark} alt="feeding" id="bookmark" />
+                                                <br />
+                                                <br />
                                                 <CardSubtitle>
                                                     Title:
                                                 </CardSubtitle>
