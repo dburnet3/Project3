@@ -105,9 +105,9 @@ class Activities extends Component {
                                             </CardBody>
 
                                         </Card>
+
                                     ))}
 
-                                    &nbsp;&nbsp;&nbsp;
 
                                 </CardGroup>
                             ) : (
