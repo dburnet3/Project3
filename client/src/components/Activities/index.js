@@ -103,7 +103,14 @@ class Activities extends Component {
                                                  </CardSubtitle>
                                                 <p>{result.dow}</p>
 
-
+                                                <br />
+                                                <div class="pretty p-icon p-round">
+                                                    <input type="checkbox" />
+                                                    <div class="state">
+                                                        <i class="icon mdi mdi-check"></i>
+                                                        <label> Commit</label>
+                                                    </div>
+                                                </div>
                                             </CardBody>
 
                                         </Card>
