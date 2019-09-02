@@ -53,7 +53,7 @@ class Activities extends Component {
     //This handles the onClick event for selecting the dow
     weekActivities = query => {
         API.getActivities(query)
-            .then(res => console.log(this.setState({ result: res.data.result })))
+            .then(res => this.setState({ result: res.data }))
             .catch(err => console.log(err));
 
     };
@@ -81,7 +81,7 @@ class Activities extends Component {
                             <FormGroup>
                                 {this.state.result.length ? (
                                     <ListGroup>
-                                        {this.result.map(result => (
+                                        {this.state.result.map(result => (
                                             <ListGroupItem key={result._id}>
                                                 <strong>
                                                     Title:
