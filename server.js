@@ -26,8 +26,8 @@ app.use(bodyParser.json());
 const datab = require("./config/keys").mysqlURI;
 
 //Initializing passport
-// app.use(passport.initialize())
-// app.use(passport.session()) // this calls serializeuser and deserialize use
+app.use(passport.initialize())
+require("./config/passport")(passport);   // this calls serializeuser and deserialize use
 // //API Routes
 app.use(routes);
 
