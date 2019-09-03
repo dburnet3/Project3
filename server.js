@@ -5,6 +5,7 @@ const app = express();
 const routes = require("./routes/api");
 const passport = require("passport");
 const db = require("./models");
+const bodyParser = require("body-parser");
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
@@ -13,6 +14,16 @@ app.use(express.json());
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
+
+//Body parser middleware
+app.use(bodyParser.urlencoded({
+  extended: false
+})
+);
+app.use(bodyParser.json());
+
+//Datab Config
+const datab = require("./config/keys").mysqlURI;
 
 //Initializing passport
 // app.use(passport.initialize())
