@@ -5,7 +5,7 @@ const login = require("./login");
 const logout = require("./logout");
 const post = require("./post");
 const puc = require("./puc");
-const signup = require("./signup");
+const users = require("./users");
 
 // Move this file into your api folder
 // Move this file into your api folder
@@ -25,7 +25,7 @@ router.use("/api/puc", puc);
 // router.get("/api/puc", function (req, res) {
 //     res.json({});
 // });
-router.use("/api/signup", signup);
+router.use("/api/users", users);
 
 // //If no API routes are hit, send the React app
 // router.use("*", function (req, res) {
