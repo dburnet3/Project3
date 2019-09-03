@@ -8,7 +8,6 @@ import Posts from './components/Posts';
 import icon from './assets/images/provision.png';
 import './App.css';
 // import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-// import logo from "./logo.svg";
 // import dashboard from "./pages/dashboard";
 // import homepage from "./pages/homepage";
 // import invitationPage from "./pages/invitationPage";
