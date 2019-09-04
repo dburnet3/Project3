@@ -37,10 +37,11 @@ class Activities extends Component {
     };
 
     //This handles the form submission for 'taking' an activity
-    handleUpdate = event => {
+    handleUpdate = id => event => {
         event.preventDefault();
+        console.log(this.state)
         API.updateActivities({
-            taken: this.state.taken
+            taken: id
         })
             .then(res => this.updateActivities(res))
             .catch(err => console.log(err));
@@ -108,7 +109,7 @@ class Activities extends Component {
                                                 <br />
                                                 <div class="pretty p-icon p-round p-jelly">
                                                     <input type="checkbox"
-                                                        onClick={this.handleUpdate}
+                                                        onClick={this.handleUpdate(result.id)}
                                                         checked={this.state.taken === true} />
                                                     <div class="state p-primary">
                                                         <i class="icon mdi mdi-check"></i>
