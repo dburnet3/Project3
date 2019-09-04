@@ -24,7 +24,7 @@ class Activities extends Component {
         result: [],
         title: "",
         time_slots: "",
-        taken: true,
+        taken: ""
     };
 
 

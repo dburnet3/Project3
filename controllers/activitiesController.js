@@ -15,7 +15,7 @@ module.exports = {
         console.log(req.params.id);
         console.log(req.body);
         db.Activity
-            .findOne({ where: { id: req.params.id } }, req.body)
+            .findOne({ where: { id: req.params.id } }, req.body.taken)
             .then(dbActivity => res.json(dbActivity))
             .catch(err => res.status(422).json(err));
     },
