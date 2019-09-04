@@ -3,7 +3,6 @@ const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
 const routes = require("./routes/api");
-const passport = require("passport");
 const db = require("./models");
 const bodyParser = require("body-parser");
 
@@ -22,12 +21,6 @@ app.use(bodyParser.urlencoded({
 );
 app.use(bodyParser.json());
 
-//Datab Config
-const datab = require("./config/keys").mysqlURI;
-
-//Initializing passport
-app.use(passport.initialize())
-require("./config/passport")(passport);   // this calls serializeuser and deserialize use
 // //API Routes
 app.use(routes);
 

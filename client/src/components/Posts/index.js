@@ -60,7 +60,7 @@ class Posts extends Component {
     render() {
         return (
             <Container className="App">
-                <img src={discussion} />
+                <img src={discussion} alt="discussion" />
                 <h2>Share your thoughts!</h2>
                 <Form className="form">
                     <Col>

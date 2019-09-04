@@ -7,42 +7,10 @@ import {
 import './home.css';
 import down from '../../assets/images/down-arrow (1).png';
 import info from '../../assets/images/additionalInfo.png';
-import { loginUser } from "../../actions/authActions";
 
 class Home extends Component {
 
-    constructor() {
-        this.state = {
-            email: "",
-            password: "",
-            errors: {}
-        };
-    }
-
-    componentDidMount() {
-        if (this.props.auth.isAuthenticated) {
-            this.props.history.push("/activities");
-        }
-    }
-
-    onChange = e => {
-        this.setState({ [e.target.id]: e.target.value });
-    };
-
-    onSubmit = e => {
-        e.preventDefault();
-
-        const userData = {
-            email: this.state.email,
-            password: this.state.password
-        }
-    };
-
-
-
     render() {
-
-        const { errors } = this.state;
 
         return (
             <div>
@@ -60,7 +28,7 @@ class Home extends Component {
                                     <h2>Sign In</h2>
 
                                     <Col lg>
-                                        <Form className="form" id="form" onSubmit={this.onSubmit}>
+                                        <Form className="form" id="form" >
                                             <Col>
                                                 <FormGroup>
                                                     <Label>Email</Label>
@@ -69,8 +37,7 @@ class Home extends Component {
                                                         name="email"
                                                         id="email"
                                                         placeholder="myemail@email.com"
-                                                        onChange={this.onChange}
-                                                        value={this.state.email}
+
                                                     />
                                                 </FormGroup>
                                             </Col>
@@ -82,8 +49,7 @@ class Home extends Component {
                                                         name="password"
                                                         id="password"
                                                         placeholder="********"
-                                                        onChange={this.onChange}
-                                                        value={this.state.password}
+
                                                     />
                                                 </FormGroup>
                                             </Col>
@@ -128,16 +94,4 @@ class Home extends Component {
 
 export default Home;
 
-Login.propTypes = {
-    loginUser: PropTypes.func.isRequired,
-    auth: PropTypes.object.isRequired,
-    errors: PropTypes.object.isRequired
-};
-const mapStateToProps = state => ({
-    auth: state.auth,
-    errors: state.errors
-});
-export default connect(
-    mapStateToProps,
-    { loginUser }
-)(Login);
+
