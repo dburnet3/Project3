@@ -40,9 +40,7 @@ class Activities extends Component {
     handleUpdate = id => event => {
         event.preventDefault();
         console.log(this.state)
-        API.updateActivities({
-            taken: id
-        })
+        API.updateActivities(id)
             .then(res => this.updateActivities(res))
             .catch(err => console.log(err));
     };
