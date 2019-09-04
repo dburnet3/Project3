@@ -9,13 +9,13 @@ module.exports = {
             .then(dbActivity => res.json(dbActivity))
             .catch(err => res.status(422).json(err));
     },
-    findOneAndUpdate: function (req, res) {
+    find: function (req, res) {
         console.log("hello---------------work-------------please------------");
         console.log(req);
         console.log(req.params.id);
         console.log(req.body);
         db.Activity
-            .findOneAndUpdate({ id: req.params.id }, req.body)
+            .find({ id: req.params.id }, req.body)
             .then(dbActivity => res.json(dbActivity))
             .catch(err => res.status(422).json(err));
     },
