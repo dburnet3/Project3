@@ -10,6 +10,7 @@ module.exports = {
             .catch(err => res.status(422).json(err));
     },
     findOneAndUpdate: function (req, res) {
+        console.log("hello---------------work-------------please------------");
         db.Activity
             .findOneAndUpdate({ _id: req.params.id }, req.body)
             .then(dbActivity => res.json(dbActivity))
