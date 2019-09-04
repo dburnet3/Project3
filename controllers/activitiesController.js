@@ -11,8 +11,11 @@ module.exports = {
     },
     findOneAndUpdate: function (req, res) {
         console.log("hello---------------work-------------please------------");
+        console.log(req);
+        console.log(req.params.id);
+        console.log(req.body);
         db.Activity
-            .findOneAndUpdate({ _id: req.params.id }, req.body)
+            .findOneAndUpdate({ id: req.params.id }, req.body)
             .then(dbActivity => res.json(dbActivity))
             .catch(err => res.status(422).json(err));
     },
