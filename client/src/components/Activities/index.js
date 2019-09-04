@@ -24,7 +24,7 @@ class Activities extends Component {
         result: [],
         title: "",
         time_slots: "",
-        taken: ""
+        taken: false
     };
 
 
@@ -41,7 +41,7 @@ class Activities extends Component {
         event.preventDefault();
         console.log(this.state)
         API.updateActivities(id)
-            .then(res => this.updateActivities(res))
+            .then(res => this.weekActivities(res))
             .catch(err => console.log(err));
     };
 
@@ -108,7 +108,7 @@ class Activities extends Component {
                                                 <div class="pretty p-icon p-round p-jelly">
                                                     <input type="checkbox"
                                                         onClick={this.handleUpdate(result.id)}
-                                                        checked={this.state.taken === true} />
+                                                        checked={this.state.taken === "true"} />
                                                     <div class="state p-primary">
                                                         <i class="icon mdi mdi-check"></i>
                                                         <label> Taken</label>
