@@ -41,7 +41,7 @@ class Activities extends Component {
     handleFormSubmit = id => event => {
         event.preventDefault();
         API.updateActivities(id)
-            .then(res => this.handleFormSubmit(res))
+            .then(res => this.updateActivities(res))
             .catch(err => console.log(err));
     };
 
