@@ -9,6 +9,8 @@ import './activities.css';
 import { Card, Button, CardGroup, CardSubtitle, CardBody } from 'reactstrap';
 import bookmark from '../../assets/images/bookmark.png';
 import '../../assets/pretty-checkbox.scss';
+import { Checkbox } from 'pretty-checkbox-react';
+
 
 //Objective - if dow is selected then display activities for that day
 
@@ -107,15 +109,12 @@ class Activities extends Component {
                                                 <p>{result.dow}</p>
 
                                                 <br />
-                                                <div class="pretty p-icon p-round p-jelly">
-                                                    <input type="checkbox"
-                                                        onClick={this.handleUpdate(result.id)}
-                                                        checked={this.state.taken === "true"} />
-                                                    <div class="state p-primary">
-                                                        <i class="icon mdi mdi-check"></i>
-                                                        <label> Taken</label>
-                                                    </div>
-                                                </div>
+                                                <Checkbox shape="round" color="success" onClick={this.handleUpdate(result.id)}
+                                                    checked={this.state.taken === "true"} icon={<i className="mdi mdi-check" />} animation="smooth">
+                                                    Taken</Checkbox>
+
+
+
                                             </CardBody>
 
                                         </Card>
