@@ -10,6 +10,7 @@ import { Card, Button, CardGroup, CardSubtitle, CardBody } from 'reactstrap';
 import bookmark from '../../assets/images/bookmark.png';
 import '../../assets/pretty-checkbox.scss';
 import { Checkbox } from 'pretty-checkbox-react';
+import Puc_Activities from '../Puc_Activities/index';
 
 
 //Objective - if dow is selected then display activities for that day
@@ -70,7 +71,10 @@ class Activities extends Component {
                 <Navbar color="light" light expand="md">
                     <NavbarBrand href="../images/back.png"><strong>Today:</strong> <Moment format="dddd, MMMM Do" className="underline_dotted">
                         2019-09-05
-    </Moment> | <img src={left} alt="left" /> <small>Sept 01 - Sept 07 </small><img src={right} alt="right" /><Button color="secondary" id="addActivity">+ Activity</Button>{' '}</NavbarBrand>
+    </Moment> | <img src={left} alt="left" /> <small>Sept 01 - Sept 07 </small><img src={right} alt="right" /><Button color="secondary" id="addActivity">
+                            <Link to={'../Puc_Activities'}><Route path='../Puc_Activities' component={Puc_Activities}> + Activity</Route></Link>
+
+                        </Button>{' '}</NavbarBrand>
                 </Navbar>
                 <br />
 
@@ -110,7 +114,7 @@ class Activities extends Component {
 
                                                 <br />
                                                 <Checkbox shape="round" color="success" onClick={this.handleUpdate(result.id)}
-                                                    checked={this.state.taken === "true"} icon={<i className="mdi mdi-check" />} animation="smooth">
+                                                    icon={<i className="mdi mdi-check" />} animation="smooth">
                                                     Taken</Checkbox>
 
 

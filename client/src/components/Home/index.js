@@ -77,7 +77,7 @@ class Home extends Component {
                 </div>
                 <Row>
                     <Col>
-                        <h1 id="moreInfo">Improving health outcomes by partnering with health plans, agencies and caregivers</h1>
+                        <h1 id="moreInfo">Improving health outcomes by partnering technology with caregivers</h1>
                     </Col>
 
                 </Row>
