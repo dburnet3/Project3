@@ -37,6 +37,7 @@ class Puc_Creation extends Component {
 
     //This handles the form submission for adding a Puc
     handleFormSubmitPuc = event => {
+        alert("Perfect! " + this.state.puc_name + " is now added!");
         event.preventDefault();
         API.createPuc({
             puc_name: this.state.puc_name

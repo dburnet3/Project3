@@ -6,10 +6,11 @@ import {
 } from 'reactstrap';
 
 import API from "../../utils/API";
-import Activities from "../Activities/index";
-import { BrowserRouter as Route, Link } from 'react-router-dom';
+// import Activities from "../Activities/index";
+// import { BrowserRouter as Route, Link } from 'react-router-dom';
 import '../Puc_Creation';
 import notification from '../../assets/images/notification.png';
+import './puc_activities.css';
 
 
 
@@ -41,6 +42,7 @@ class Puc_Activities extends Component {
 
     //This handles the form submission for adding Puc activities
     handleFormSubmitPucActivities = event => {
+        alert("Great! You've added an activity!");
         event.preventDefault();
         API.postActivities({
             title: this.state.title,
@@ -140,11 +142,11 @@ class Puc_Activities extends Component {
                     </Col>
                     <Row>
                         <Col xs="6">
-                            <Button color="primary" className="px-4">
+                            {/* <Button color="primary" className="px-4">
                                 <Link to={'../Activities'}><Route path='../Activities' component={Activities}>Activities Dashboard</Route></Link>
 
 
-                            </Button>
+                            </Button> */}
                         </Col>
                     </Row>
                 </Form>
