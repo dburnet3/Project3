@@ -24,7 +24,8 @@ class Activities extends Component {
         result: [],
         title: "",
         time_slots: "",
-        taken: false
+        taken: false,
+        isChecked: false
     };
 
 
@@ -58,7 +59,9 @@ class Activities extends Component {
 
     };
 
-
+    getValidationType = isChecked => (isChecked ? 'success' : 'error');
+    getValidationMessage = isChecked =>
+        isChecked ? 'Thanks for checking that' : 'You must enable this checkbox';
 
     render() {
 
@@ -108,11 +111,13 @@ class Activities extends Component {
                                                 <br />
                                                 <div class="pretty p-icon p-round p-jelly">
                                                     <input type="checkbox"
-                                                        onClick={this.handleUpdate(result.id)}
-                                                        checked={this.state.taken === "true"} />
+                                                        checked={this.state.isChecked}
+                                                        onChange={event => this.setState({ isChecked: event.target.checked })}
+                                                    />
                                                     <div class="state p-primary">
                                                         <i class="icon mdi mdi-check"></i>
                                                         <label> Taken</label>
+
                                                     </div>
                                                 </div>
                                             </CardBody>

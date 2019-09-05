@@ -13,7 +13,7 @@ export default {
 
     updateActivities: function (id) {
         console.log(id);
-        return axios.put("/api/activities/", id);
+        return axios.put("/api/activities/" + id);
     },
 
     getAccount: function (id) {
