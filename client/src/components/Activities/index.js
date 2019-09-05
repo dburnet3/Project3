@@ -24,8 +24,7 @@ class Activities extends Component {
         result: [],
         title: "",
         time_slots: "",
-        taken: false,
-        isChecked: false
+        taken: ""
     };
 
 
@@ -38,11 +37,12 @@ class Activities extends Component {
     };
 
     //This handles the form submission for 'taking' an activity
-    handleUpdate = id => event => {
+    handleFormSubmit = event => {
         event.preventDefault();
-        console.log(this.state)
-        API.updateActivities(id)
-            .then(res => this.setState(res.taken))
+        API.updateActivities({
+            taken: this.state.taken
+        })
+            .then(res => this.handleFormSubmit(res))
             .catch(err => console.log(err));
     };
 
@@ -59,9 +59,7 @@ class Activities extends Component {
 
     };
 
-    getValidationType = isChecked => (isChecked ? 'success' : 'error');
-    getValidationMessage = isChecked =>
-        isChecked ? 'Thanks for checking that' : 'You must enable this checkbox';
+
 
     render() {
 
@@ -109,15 +107,14 @@ class Activities extends Component {
                                                 <p>{result.dow}</p>
 
                                                 <br />
-                                                <div class="pretty p-icon p-round p-jelly">
-                                                    <input type="checkbox"
-                                                        checked={this.state.isChecked}
-                                                        onChange={event => this.setState({ isChecked: event.target.checked })}
+                                                <div>
+                                                    <label> Taken By:</label>
+                                                    <input name="taken"
+                                                        value={this.state.taken}
+                                                        onChange={this.handleInputChange}
                                                     />
                                                     <div class="state p-primary">
-                                                        <i class="icon mdi mdi-check"></i>
-                                                        <label> Taken</label>
-
+                                                        <Button onClick={this.handleFormSubmit}>Commit</Button>
                                                     </div>
                                                 </div>
                                             </CardBody>

@@ -9,11 +9,7 @@ module.exports = {
             .then(dbActivity => res.json(dbActivity))
             .catch(err => res.status(422).json(err));
     },
-    findOne: function (req, res) {
-        console.log("hello---------------work-------------please------------");
-        console.log(req);
-        console.log(req.params.id);
-        console.log(req.body);
+    update: function (req, res) {
         db.Activity
             .findOne({ where: { id: req.params.id } }, req.body.taken)
             .then(dbActivity => res.json(dbActivity))
