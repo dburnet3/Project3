@@ -11,6 +11,9 @@ import bookmark from '../../assets/images/bookmark.png';
 import '../../assets/pretty-checkbox.scss';
 import { Checkbox } from 'pretty-checkbox-react';
 import Puc_Activities from '../Puc_Activities/index';
+import { BrowserRouter as Route, Link } from 'react-router-dom';
+
+
 
 
 //Objective - if dow is selected then display activities for that day
