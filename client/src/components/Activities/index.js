@@ -24,7 +24,7 @@ class Activities extends Component {
         result: [],
         title: "",
         time_slots: "",
-        taken: ""
+        taken: false
     };
 
 
@@ -38,10 +38,12 @@ class Activities extends Component {
 
 
     //This handles the form submission for 'taking' an activity
-    handleFormSubmit = id => event => {
+    handleUpdate = id => event => {
         event.preventDefault();
+        console.log(this.state)
         API.updateActivities(id)
-            .then(res => this.updateActivities(res))
+            .then(res => this.weekActivities(res))
+            .then(res => this.setState(res.taken))
             .catch(err => console.log(err));
     };
 
@@ -106,14 +108,13 @@ class Activities extends Component {
                                                 <p>{result.dow}</p>
 
                                                 <br />
-                                                <div>
-                                                    <label> Taken By:</label>
-                                                    <input name="taken"
-                                                        value={this.state.taken}
-                                                        onChange={this.handleInputChange}
-                                                    />
+                                                <div class="pretty p-icon p-round p-jelly">
+                                                    <input type="checkbox"
+                                                        onClick={this.handleUpdate(result.id)}
+                                                        checked={this.state.taken === "true"} />
                                                     <div class="state p-primary">
-                                                        <Button onClick={this.handleFormSubmit}>Commit</Button>
+                                                        <i class="icon mdi mdi-check"></i>
+                                                        <label> Taken</label>
                                                     </div>
                                                 </div>
                                             </CardBody>
