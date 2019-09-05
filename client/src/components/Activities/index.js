@@ -41,7 +41,7 @@ class Activities extends Component {
         event.preventDefault();
         console.log(this.state)
         API.updateActivities(id)
-            .then(res => this.weekActivities(res))
+            .then(res => this.setState(res.taken))
             .catch(err => console.log(err));
     };
 
