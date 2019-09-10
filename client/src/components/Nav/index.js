@@ -1,7 +1,7 @@
 import React from "react";
 import { useAuth0 } from "../../react-auth0-wrapper";
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-import icon from './assets/images/provision.png';
+import icon from '../../assets/images/provision.png';
 
 
 
