@@ -5,7 +5,7 @@ import Puc_Creation from './components/Puc_Creation';
 import Activities from "./components/Activities";
 import Puc_Activities from './components/Puc_Activities';
 import Posts from './components/Posts';
-import icon from './assets/images/provision.png';
+// import icon from './assets/images/provision.png';
 import './App.css';
 import Nav from './components/Nav';
 import { useAuth0 } from "./react-auth0-wrapper";
