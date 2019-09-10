@@ -47,20 +47,23 @@ function App() {
               <li><Link to={'/Profile'} className="nav-link">Profile</Link></li>
 
             </ul>
-          </nav>
+          </nav> */}
 
-          <Switch>
-            <Route exact path='/' component={Home} />
-            <Route path='/Activities' component={Activities} />
-            <Route path='/Puc_Creation' component={Puc_Creation} />
-            <Route path='/Puc_Activities' component={Puc_Activities} />
-            <Route path='/Posts' component={Posts} />
-            <Route path='/Profile' component={Profile} />
-          </Switch> */}
+      <BrowserRouter>
+        <header>
+          <Nav />
+        </header>
+        <Switch>
+          <Route exact path='/' component={Home} />
+          <Route path='/Activities' component={Activities} />
+          <Route path='/Puc_Creation' component={Puc_Creation} />
+          <Route path='/Puc_Activities' component={Puc_Activities} />
+          <Route path='/Posts' component={Posts} />
+          <Route path='/Profile' component={Profile} />
+        </Switch>
+      </BrowserRouter>
 
-      <header>
-        <Nav />
-      </header>
+
     </div>
     // </Router>
 
