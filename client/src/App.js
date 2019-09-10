@@ -7,6 +7,8 @@ import Puc_Activities from './components/Puc_Activities';
 import Posts from './components/Posts';
 import icon from './assets/images/provision.png';
 import './App.css';
+import Nav from './components/Nav';
+// import { useAuth0 } from "./react-auth0-wrapper";
 // import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // import dashboard from "./pages/dashboard";
 // import homepage from "./pages/homepage";
@@ -19,12 +21,19 @@ import './App.css';
 
 class App extends Component {
   render() {
+    const { loading } = useAuth0();
+
+    if (loading) {
+      return (
+        <div>Loading...</div>
+      );
+    }
     return (
       <Router>
         <div>
 
 
-          <nav className="navbar navbar-expand-lg navbar-light bg-light">
+          {/* <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <h2> <img src={icon} alt="icon" />Provision</h2>
             <ul className="navbar-nav mr-auto">
               <li><Link to={'/'} className="nav-link"> Home </Link></li>
@@ -41,7 +50,11 @@ class App extends Component {
             <Route path='/Puc_Creation' component={Puc_Creation} />
             <Route path='/Puc_Activities' component={Puc_Activities} />
             <Route path='/Posts' component={Posts} />
-          </Switch>
+          </Switch> */}
+
+          <header>
+            <Nav />
+          </header>
         </div>
       </Router>
     );

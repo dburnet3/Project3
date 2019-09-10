@@ -1,20 +1,27 @@
 import React from "react";
+import { useAuth0 } from "../../react-auth0-wrapper";
+
+
+//Declaring navbar as a function and passing through a couple of parameters to 
+// determine if user is authenticated, can be logged in & redirected, and lastly logged out.
+const NavBar = () => {
+    const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
+}
 
 function Nav() {
     return (
         <div>
-            <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
-                <a className="navbar-brand" href="/">
-                    React Reading List
-        </a>
-            </nav>
-            <container>
-                <Row>
-                    <Col xs="6" sm="4">Feeding</Col>
-                    <Col xs="6" sm="4">Medication</Col>
-                    <Col sm="4">Appointment</Col>
-                </Row>
-            </container>
+            <div>
+                {!isAuthenticated && (
+                    <button onClick={() =>
+                        loginWithRedirect({})
+                    }
+                    >
+                        Login
+                </button>
+                )}
+                {isAuthenticated && <button onClick={() => logout()}>Logout</button>}
+            </div>
         </div>
     );
 }
