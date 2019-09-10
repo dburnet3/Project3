@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import React from "react";
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Home from './components/Home';
 import Puc_Creation from './components/Puc_Creation';
 import Activities from "./components/Activities";
