@@ -9,6 +9,7 @@ import icon from './assets/images/provision.png';
 import './App.css';
 import Nav from './components/Nav';
 import { useAuth0 } from "./react-auth0-wrapper";
+import Profile from './components/Profile';
 // import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // import dashboard from "./pages/dashboard";
 // import homepage from "./pages/homepage";
@@ -43,6 +44,8 @@ function App() {
               <li><Link to={'/Puc_Creation'} className="nav-link">Puc Creation</Link></li>
               <li><Link to={'/Puc_Activities'} className="nav-link">Puc Activities</Link></li>
               <li><Link to={'/Posts'} className="nav-link">Discussion Board</Link></li>
+              <li><Link to={'/Profile'} className="nav-link">Profile</Link></li>
+
             </ul>
           </nav>
 
@@ -52,6 +55,7 @@ function App() {
             <Route path='/Puc_Creation' component={Puc_Creation} />
             <Route path='/Puc_Activities' component={Puc_Activities} />
             <Route path='/Posts' component={Posts} />
+            <Route path='/Profile' component={Profile} />
           </Switch> */}
 
       <header>
