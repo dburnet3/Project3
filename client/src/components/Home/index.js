@@ -28,7 +28,7 @@ class Home extends Component {
                                     <h2>Sign In</h2>
 
                                     <Col lg>
-                                        <Form className="form" id="form" >
+                                        {/* <Form className="form" id="form" >
                                             <Col>
                                                 <FormGroup>
                                                     <Label>Email</Label>
@@ -68,7 +68,7 @@ class Home extends Component {
                                                 <Button id="signup">Sign Up</Button> &nbsp;
                                         <Button id="login">Login</Button>
                                             </Col>
-                                        </Form>
+                                        </Form> */}
                                     </Col>
                                 </CardBody>
                             </Card>
