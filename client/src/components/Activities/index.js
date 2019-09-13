@@ -69,6 +69,10 @@ class Activities extends Component {
 
     render() {
 
+        const content = this.state.taken
+        ? <div> Activity Taken </div>
+        : null;
+
         return (
             <div>
                 <Navbar color="light" light expand="md">
@@ -120,7 +124,10 @@ class Activities extends Component {
                                                     icon={<i className="mdi mdi-check" />} animation="smooth">
                                                     Taken</Checkbox>
 
-
+                                            <div>
+                                                { content }
+                                            </div>;
+                                                
 
                                             </CardBody>
 
