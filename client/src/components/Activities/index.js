@@ -26,27 +26,12 @@ import { BrowserRouter as Route, Link } from 'react-router-dom';
 
 class Activities extends Component {
 
-    constructor() {
-        super();
-
-        this.state = { checked: false };
-        this.handleChange = this.handleChange.bind(this);
-
-    }
     state = {
         result: [],
         title: "",
         time_slots: "",
-
-        // taken: false
+        taken: false
     };
-
-    handleChange() {
-        this.setState({
-            checked: !this.state.checked
-        })
-    }
-
 
 
     //This handles the input change for the users activity selection
@@ -84,7 +69,7 @@ class Activities extends Component {
 
     render() {
 
-        const content = this.state.checked
+        const content = this.state.taken
             ? <div> Activity Taken </div>
             : null;
 
@@ -135,11 +120,9 @@ class Activities extends Component {
                                                 <p>{result.dow}</p>
 
                                                 <br />
-                                                {/* <Checkbox shape="round" color="success" onClick={this.handleUpdate(result.id)}
+                                                <Checkbox shape="round" color="success" onClick={this.handleUpdate(result.id)}
                                                     icon={<i className="mdi mdi-check" />} animation="smooth">
-                                                    Taken</Checkbox> */}
-
-                                                <input type="checkbox" checked={this.state.checked} onChange={this.handleChange} />
+                                                    Taken</Checkbox>
 
                                                 <div>
                                                     {content}
