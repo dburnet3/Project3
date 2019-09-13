@@ -70,8 +70,8 @@ class Activities extends Component {
     render() {
 
         const content = this.state.taken
-        ? <div> Activity Taken </div>
-        : null;
+            ? <div> Activity Taken </div>
+            : null;
 
         return (
             <div>
@@ -124,10 +124,10 @@ class Activities extends Component {
                                                     icon={<i className="mdi mdi-check" />} animation="smooth">
                                                     Taken</Checkbox>
 
-                                            <div>
-                                                { content }
-                                            </div>;
-                                                
+                                                <div>
+                                                    {content}
+                                                </div>
+
 
                                             </CardBody>
 
