@@ -3,6 +3,7 @@ import { useAuth0 } from "../../react-auth0-wrapper";
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import icon from '../../assets/images/provision.png';
 import { Button } from 'reactstrap';
+import './nav.css';
 
 
 
@@ -16,7 +17,7 @@ const Nav = () => {
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
                 <h2> <img src={icon} alt="icon" />Provision</h2>
 
-                <div>
+                <div className="loginLogout">
                     {!isAuthenticated && (
                         <Button onClick={() =>
                             loginWithRedirect({})
