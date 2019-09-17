@@ -70,7 +70,7 @@ class Puc_Activities extends Component {
 
     render() {
         return (
-            <Container className="App">
+            <Container className="Puc_Activities">
                 <img src={notification} id="notification" alt="notification" />
                 <h2>Create Activities</h2>
                 <Form className="form">

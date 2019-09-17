@@ -50,7 +50,7 @@ class Puc_Creation extends Component {
 
     render() {
         return (
-            <Container className="App">
+            <Container className="Puc_Creation">
                 <img src={user} alt="user" id="user" />
                 <br />
                 <h2>Manage Person Under Care</h2>
