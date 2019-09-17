@@ -12,8 +12,6 @@ import '../Puc_Creation';
 import notification from '../../assets/images/notification.png';
 import './puc_activities.css';
 // import Select from 'react-select';
-import { BrowserRouter as Route, Link } from 'react-router-dom';
-import Activities from '../Activities/index';
 
 //This is the selectable dropdown that can be used to select the day of the week
 
@@ -150,7 +148,7 @@ class Puc_Activities extends Component {
                             </Label>
                         </FormGroup>
                         <FormGroup>
-                            <Link to={'../Activities'}><Route path='../Activities' component={Activities}> <Button onClick={this.handleFormSubmitPucActivities}>Add</Button></Route></Link>
+                            <Button onClick={this.handleFormSubmitPucActivities}>Add</Button>
                         </FormGroup>
                     </Col>
                     <Row>
