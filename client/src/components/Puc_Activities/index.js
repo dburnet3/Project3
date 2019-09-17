@@ -11,8 +11,19 @@ import API from "../../utils/API";
 import '../Puc_Creation';
 import notification from '../../assets/images/notification.png';
 import './puc_activities.css';
+import Select from 'react-select';
 
+//This is the selectable dropdown that can be used to select the day of the week
 
+const dayWeek = [
+    { label: "Monday", value: "Monday" },
+    { label: "Tuesday", value: "Tuesday" },
+    { label: "Wednesday", value: "Wednesday" },
+    { label: "Thursday", value: "Thursday" },
+    { label: "Friday", value: "Friday" },
+    { label: "Saturday", value: "Saturday" },
+    { label: "Sunday", value: "Sunday" }
+];
 
 class Puc_Activities extends Component {
 
@@ -125,14 +136,15 @@ class Puc_Activities extends Component {
 
                         <FormGroup check inline>
                             <Label>
-                                <Input
+                                {/* <Input
                                     type="dow"
                                     name="dow"
                                     id="dow"
                                     placeholder="Monday"
                                     value={this.state.dow}
                                     onChange={this.handleInputChangeActivities}
-                                />
+                                /> */}
+                                <Select options={dayWeek} name="dow" value={this.state.dow} onChange={this.handleInputChangeActivities} />
 
                             </Label>
                         </FormGroup>
