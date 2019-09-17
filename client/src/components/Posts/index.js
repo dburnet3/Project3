@@ -6,6 +6,7 @@ import {
 } from 'reactstrap';
 import API from "../../utils/API";
 import discussion from '../../assets/images/discuss-issue.png';
+import './posts.css';
 
 
 

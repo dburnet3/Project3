@@ -1,4 +1,5 @@
 import React from 'react';
+import './profile.css';
 // we're using 'useAuth0' to retrive the user's profile information through the user property.
 import { useAuth0 } from '../../react-auth0-wrapper';
 
